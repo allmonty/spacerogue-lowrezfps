@@ -30,11 +30,15 @@ public class PlayerLookControl : MonoBehaviour {
     void Start()
     {
         originalRotation = head.transform.localRotation;
-        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void updateLookDir()
     {
+        if(Cursor.lockState != CursorLockMode.Locked)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+
         lookRotation.x += lookDir.x * sensitivityX;
         lookRotation.y += lookDir.y * sensitivityY;
 
