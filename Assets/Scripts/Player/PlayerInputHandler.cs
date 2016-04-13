@@ -5,6 +5,7 @@ public class PlayerInputHandler : MonoBehaviour {
 
     public MovementController playerMove;
     public PlayerLookControl playerLook;
+    public PlayerShootControl playerShoot;
 
     [Header("Controls")]
     public string moveAxisHorizontal = "Horizontal";
@@ -12,6 +13,7 @@ public class PlayerInputHandler : MonoBehaviour {
     public string lookAxisHorizontal = "LookHorizontal";
     public string lookAxisVertical = "LookVertical";
     public string jumpButton = "Jump";
+    public string shootButton = "Fire1";
 
     Transform mainCam;
     Vector3 moveControlDir = Vector3.zero;
@@ -37,6 +39,14 @@ public class PlayerInputHandler : MonoBehaviour {
         if(playerLook != null)
         {
             playerLook.LookDir = new Vector2(Input.GetAxis(lookAxisVertical), Input.GetAxis(lookAxisHorizontal));
+        }
+
+        if(playerShoot != null)
+        {
+            if (Input.GetButtonDown(shootButton))
+            {
+                playerShoot.shoot();
+            }
         }
     }
 
