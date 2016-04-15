@@ -15,7 +15,7 @@ public class BulletBehaviour : MonoBehaviour {
         rigid = GetComponent<Rigidbody>();
     }
 
-    void OnTriggerEnter(Collider col)
+    void OnCollisionEnter(Collision col)
     {
         if(col.gameObject.layer == LayerMask.NameToLayer(targetLayer))
         {
