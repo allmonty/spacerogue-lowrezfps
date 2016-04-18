@@ -37,12 +37,12 @@ public class EnemyAI : MonoBehaviour {
         Gizmos.DrawWireSphere(transform.position, visionDistance);
 
         //Draws the vision angle
-        UnityEditor.Handles.color = new Color(0.0f, 0.0f, 1.0f, 0.5f);
-        Vector3 centeredAngle = Quaternion.Euler(0f, -visionAngle/2f, 0f) * transform.forward;
-        UnityEditor.Handles.DrawSolidArc(transform.position, transform.up, centeredAngle, visionAngle, visionDistance);
+        //UnityEditor.Handles.color = new Color(0.0f, 0.0f, 1.0f, 0.5f);
+        //Vector3 centeredAngle = Quaternion.Euler(0f, -visionAngle/2f, 0f) * transform.forward;
+        //UnityEditor.Handles.DrawSolidArc(transform.position, transform.up, centeredAngle, visionAngle, visionDistance);
 
-        UnityEditor.Handles.color = new Color(0.0f, 1.0f, 0.0f, 0.5f);
-        UnityEditor.Handles.DrawSolidArc(transform.position, transform.up, centeredAngle, visionAngle, shootDistance);
+        //UnityEditor.Handles.color = new Color(0.0f, 1.0f, 0.0f, 0.5f);
+        //UnityEditor.Handles.DrawSolidArc(transform.position, transform.up, centeredAngle, visionAngle, shootDistance);
     }
 
     void Update()
