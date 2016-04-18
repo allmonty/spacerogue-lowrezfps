@@ -5,6 +5,7 @@ public class BulletBehaviour : MonoBehaviour {
 
     public float pushSpeed = 2.0f;
     public float verticalSpeed = 10.0f;
+    public int damage = 1;
 
     [SerializeField] string targetLayer = "None";
 
@@ -21,6 +22,7 @@ public class BulletBehaviour : MonoBehaviour {
         {
             pushAway(col.gameObject.GetComponent<Rigidbody>());
             Destroy(gameObject);
+            col.gameObject.GetComponent<HealthControl>().takeDamage(damage);
         }
     }
 
