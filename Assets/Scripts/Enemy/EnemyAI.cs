@@ -10,6 +10,7 @@ public class EnemyAI : MonoBehaviour {
     public float visionAngle = 30f;
 
     NavMeshAgent navAgent;
+    Rigidbody rigid;
     Transform player;
 
     Vector3 startPosition;
@@ -22,6 +23,7 @@ public class EnemyAI : MonoBehaviour {
     void Start()
     {
         navAgent = GetComponent<NavMeshAgent>();
+        rigid = GetComponent<Rigidbody>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
         startPosition = transform.position;
@@ -116,6 +118,7 @@ public class EnemyAI : MonoBehaviour {
 
     void backToStartPosition()
     {
+        rigid.velocity = Vector3.zero;
         navAgent.SetDestination(startPosition);
         if (Vector3.Distance(transform.position, startPosition) <= 1f)
         {
@@ -137,6 +140,7 @@ public class EnemyAI : MonoBehaviour {
 
     void attackPlayer()
     {
+        rigid.velocity = Vector3.zero;
         float distanceFromPlayer = Vector3.Distance(transform.position, player.position);
         if (distanceFromPlayer <= shootDistance)
         {
