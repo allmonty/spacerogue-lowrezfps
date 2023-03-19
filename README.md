@@ -1,4 +1,4 @@
-# LowRezFPS
+# Space Rogue - Low Rez FPS
 FPS game with space theme that we did for the LowRezJam.
 
 Game page: https://rottenfish.itch.io/spacerogue
